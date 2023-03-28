@@ -15,7 +15,6 @@
 
 ## Tasks
 
-- All `*-main.c` files will be located in the [main](./main) directory
 - We will be using function prototypes that will be included in our header file called, [main.h](./main.h).
 
 ---
