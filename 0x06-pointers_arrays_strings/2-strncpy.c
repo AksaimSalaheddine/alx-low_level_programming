@@ -1,7 +1,8 @@
 /**
- * _strcat - function that concatenates two strings.
+ * _strncpy - function that copies a string.
  * @dest: destintion
  * @src: surce
+ * @n: number of character to cpy
  *
  * Return: destintion.
  */
