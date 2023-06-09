@@ -13,7 +13,7 @@ int main(int ac, char **av)
 {
 	if (ac > 0)
 	{
-		printf("this is my name: %s\n", av[0]);
+		printf("%s\n", av[0]);
 	}
 	return (0);
 }
