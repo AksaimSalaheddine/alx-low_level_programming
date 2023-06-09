@@ -18,8 +18,8 @@ int main(int ac, char *av[])
 		return (1);
 	}
 
-	int ar1 = atoi(av[1]);
-	int ar2 = atoi(av[2]);
+	int ar1 = strtol(av[1], NULL, 10);
+	int ar2 = strtol(av[2], NULL, 10);
 
 	printf("%i\n", ar1 * ar2);
 	return (0);
