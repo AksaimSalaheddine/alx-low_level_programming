@@ -9,7 +9,7 @@
  * Return: 0
  */
 
-int main(int ac, char *av[])
+int main(int ac, char *argv[] __attribute__((unused)))
 {
 	printf("%i\n", ac - 1);
 	return (0);
