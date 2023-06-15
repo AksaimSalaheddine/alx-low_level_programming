@@ -1,6 +1,6 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * string_nconcat - concatenates two strings.
@@ -14,26 +14,23 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *str;
-	unsigned int len1, len2;
-	unsigned int i, j;
+	unsigned int i, j, len1, len2;
+	char *p;
 
-	for (len1 = 0; s1[len1] != '\0' && s1 != NULL; len1++)
+	for (len1 = 0; s1 != NULL && s1[len1] != '\0'; len1++)
 		;
-	for (len2 = 0; s2[len2] != '\0' && s2 != NULL; len2++)
+	for (len2 = 0; s2 != NULL && s2[len2] != '\0'; len2++)
 		;
-	if (n >= len2)
-		str = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
-	else
-		str = (char *)malloc(sizeof(char) * (len1 + n + 1));
-	if (str == NULL)
+	if (n > len2)
+		n = len2;
+	p = malloc(sizeof(char) * (len1 + n + 1));
+	if (p == NULL)
 		return (NULL);
-
-	for (i = 0; i < len1 && s1 != NULL; i++)
-		str[i] = s1[i];
+	for (i = 0; s1 != NULL && i < len1; i++)
+		p[i] = s1[i];
 	for (j = 0; s2 != NULL && j < n; j++)
-		str[i + j] = s2[j];
-	str[len1 + n] = '\0';
-	return (str);
-	free(str);
+		p[i + j] = s2[j];
+	p[len1 + n] = '\0';
+	return (p);
+	free(p);
 }
